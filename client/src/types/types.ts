@@ -1,3 +1,10 @@
+export enum LoadingStatus {
+  idle = 'idle',
+  loading = 'loading',
+  success = 'success',
+  failed = 'failed',
+}
+
 export type Category = {
   name: string;
   categoryArticles: CategoryArticle;

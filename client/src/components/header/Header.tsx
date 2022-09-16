@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AppBar, Box, Toolbar, Typography, Container, TextField, InputAdornment  } from '@mui/material';
+import { AppBar, Box, Toolbar, Typography, Container, TextField, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 const Header = () => {
     return (
-        <AppBar position='static' data-testid='testHeaderId'>
+        <AppBar position='static' role='Header'>
             <Container maxWidth='xl'>
                 <Toolbar
                     disableGutters
@@ -44,18 +44,21 @@ const Header = () => {
                         Home24
                     </Typography>
 
-                    <Box sx={{ flexGrow: 0 }}>
+                    <Box sx={{ flexGrow: 0, color: 'white' }}>
                         <TextField
-                            id="input-with-icon-textfield"
+                            id="search"
+                            name="search"
                             placeholder='search'
                             InputProps={{
                                 startAdornment: (
                                     <InputAdornment position="start">
-                                        <SearchIcon />
+                                        <SearchIcon sx={{ color: 'white' }} />
                                     </InputAdornment>
                                 ),
                             }}
                             variant="standard"
+                            type="text"
+                            sx={{ input: { color: 'white' } }}
                         />
                     </Box>
                 </Toolbar>
